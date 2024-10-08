@@ -5,15 +5,14 @@
 // Execute `rustlings hint enums3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-use std::intrinsics::mir::Move;
+
 
 enum Message {
     ChangeColor(u8,u8,u8),
     Echo(String),
-    Move{x:u8,y:u8},
-    Quit// TODO: implement the message variant types based on their usage below
+    Move(Point),
+    Quit,// TODO: implement the message variant types based on their usage below
 }
 
 struct Point {
@@ -44,10 +43,16 @@ impl State {
     }
 
     fn process(&mut self, message: Message) {
-       color=ChangeColor; // TODO: create a match expression to process the different message
-        message=Echo;// variants
-        position=self.move_position(p);// Remember: When passing a tuple as a function argument, you'll need
-        quit=true// extra parentheses: fn function((t, u, p, l, e))
+    match  message{
+        Message::ChangeColor(a,b,c)  => {self.change_color((a,b,c));}
+        Message::Echo(s) => {self.echo(s);},
+        Message::Move (Point) => {self.move_position(Point)},
+        Message::Quit=>{self.quit();} ,
+        
+    }// TODO: create a match expression to process the different message
+    // variants
+    // Remember: When passing a tuple as a function argument, you'll need
+    // extra parentheses: fn function((t, u, p, l, e))
     }
 }
 
