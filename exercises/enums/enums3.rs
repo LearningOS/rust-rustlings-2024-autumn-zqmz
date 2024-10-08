@@ -7,8 +7,13 @@
 
 // I AM NOT DONE
 
+use std::intrinsics::mir::Move;
+
 enum Message {
-    // TODO: implement the message variant types based on their usage below
+    ChangeColor(u8,u8,u8),
+    Echo(String),
+    Move{x:u8,y:u8},
+    Quit// TODO: implement the message variant types based on their usage below
 }
 
 struct Point {
@@ -39,10 +44,10 @@ impl State {
     }
 
     fn process(&mut self, message: Message) {
-        // TODO: create a match expression to process the different message
-        // variants
-        // Remember: When passing a tuple as a function argument, you'll need
-        // extra parentheses: fn function((t, u, p, l, e))
+       color=ChangeColor; // TODO: create a match expression to process the different message
+        message=Echo;// variants
+        position=self.move_position(p);// Remember: When passing a tuple as a function argument, you'll need
+        quit=true// extra parentheses: fn function((t, u, p, l, e))
     }
 }
 
